@@ -1,5 +1,5 @@
-const Migrations = artifacts.require("Migrations");
+const game = artifacts.require("game");
 
 module.exports = function (deployer) {
-  deployer.deploy(Migrations);
+  deployer.deploy(game);
 };
