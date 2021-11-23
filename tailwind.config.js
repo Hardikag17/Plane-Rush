@@ -6,7 +6,11 @@ module.exports = {
     './src/components/*.{js,jsx}',
   ],
   darkMode: false, // or 'media' or 'class'
-  theme: {},
+  theme: {
+    colors: {
+      Primary: '#f4471f',
+    },
+  },
   variants: {
     extend: {},
   },
