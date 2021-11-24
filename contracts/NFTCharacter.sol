@@ -1,19 +1,20 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.22 <0.9.0;
+pragma solidity ^0.6.6;
 
-contract game {
-  address public owner = msg.sender;
-  uint public last_completed_migration;
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-  modifier restricted() {
-    require(
-      msg.sender == owner,
-      "This function is restricted to the contract's owner"
-    );
-    _;
+contract NFTCharacter is ERC721 {
+  address public contractOwner;
+
+  constructor() public ERC721("NFTCharacter", "NTC") {
+    contractOwner = msg.sender;
   }
 
-  function setCompleted(uint completed) public restricted {
-    last_completed_migration = completed;
+  modifier onlyContractOwner() {
+    require(
+      msg.sender == contractOwner,
+      "The caller should be the owner of this contract"
+    );
+    _;
   }
 }
