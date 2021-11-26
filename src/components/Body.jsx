@@ -5,8 +5,8 @@ function Body() {
   let history = useHistory();
 
   return (
-    <div>
-      <h1 className='mx-auto text-6xl font-bold text-center items-center'>
+    <div classname='h-full bg-design bg-no-repeat bg-center bg-cover'>
+      <h1 className='mx-auto font-fontFamily text-Primary text-6xl font-bold text-center items-center'>
         Save the Plane
       </h1>
 

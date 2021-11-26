@@ -7,6 +7,12 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      fontFamily: ['Pacifico', 'cursive'],
+    },
+    backgroundImage: {
+      design: 'url(../src/assets/landingpage.png)',
+    },
     colors: {
       Primary: '#f4471f',
     },
