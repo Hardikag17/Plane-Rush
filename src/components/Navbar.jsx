@@ -23,9 +23,9 @@ function Navbar() {
                 .call()
                 .then((highScore) => {
                   if (highScore.length === 0) highScore = '0';
-                  setState({ ...state, highScore });
+                  setState({ ...state, highScore: parseFloat(highScore) });
                   if (localStorage.getItem('highScore') == null)
-                    localStorage.setItem('highScore', parseInt(highScore));
+                    localStorage.setItem('highScore', highScore);
                   history.push('/game');
                 });
             }}></i>

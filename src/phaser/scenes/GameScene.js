@@ -33,8 +33,14 @@ class GameScene extends Scene {
     this.keys = this.input.keyboard.addKeys('W,S,A,D');
     this.blockOne = this.createBlock(0);
     this.blockTwo = this.createBlock(this.physics.world.bounds.height);
-    this.scoreText = this.add.text(0, 0, `Score: ${this.score}`);
-    this.highScoreText = this.add.text(0, 20, `High Score: ${this.highScore}`);
+    this.scoreText = this.add.text(10, 10, `SCORE: ${this.score}`, {
+      fontSize: 16,
+      fontFamily: '"Press Start 2P"',
+    });
+    this.highScoreText = this.add.text(10, 35, `HIGHSCORE: ${this.highScore}`, {
+      fontSize: 16,
+      fontFamily: '"Press Start 2P"',
+    });
   }
   update() {
     if (this.loaded) {
@@ -63,9 +69,9 @@ class GameScene extends Scene {
     }
   }
   reflectScore() {
-    this.scoreText.setText(`Score: ${this.score}`);
+    this.scoreText.setText(`SCORE: ${this.score}`);
     if (this.score > this.highScore) this.highScore = this.score;
-    this.highScoreText.setText(`High Score: ${this.highScore}`);
+    this.highScoreText.setText(`HIGHSCORE: ${this.highScore}`);
   }
   createPlayer() {
     let player = this.physics.add.sprite(
