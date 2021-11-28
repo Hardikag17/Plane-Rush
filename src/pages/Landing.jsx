@@ -15,6 +15,8 @@ const Landing = () => {
     if (window.ethereum) {
       await window.ethereum.request({ method: 'eth_requestAccounts' });
       try {
+        const isUnlocked = await window.ethereum._metamask.isUnlocked();
+        if (!isUnlocked) throw new Error('Wallet Locked!');
         const web3 = new Web3(window.ethereum);
         const account = (await web3.eth.getAccounts())[0];
         const netId = await web3.eth.net.getId();

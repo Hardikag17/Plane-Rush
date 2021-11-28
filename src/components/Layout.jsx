@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
         if (event) alert('random character generated');
       });
     }
-  }, [state.loaded]);
+  }, [state, history, location.pathname]);
 
   return (
     <GameContext.Provider value={{ state, setState }}>
