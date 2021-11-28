@@ -32,7 +32,7 @@ const NFT = ({ nft: { url, price, page, tokenId } }) => {
         .then((res) => {
           let parsedImage = res.image.replace(
             'ipfs://',
-            'https://cloudflare-ipfs.com/ipfs'
+            'https://cloudflare-ipfs.com/ipfs/'
           );
           setName(res.name);
           setImage(parsedImage);
