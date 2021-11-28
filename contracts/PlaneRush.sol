@@ -4,14 +4,14 @@ pragma solidity ^0.6.6;
 import "@chainlink/contracts/src/v0.6/ChainlinkClient.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-contract NFTCharacter is ERC721, ChainlinkClient {
+contract PlaneRush is ERC721, ChainlinkClient {
   address public contractOwner;
 
   address private oracle;
   bytes32 private jobId;
   uint256 private fee;
 
-  constructor() public ERC721("NFTCharacter", "NTC") {
+  constructor() public ERC721("Plane", "PLNR") {
     setChainlinkToken(0x326C977E6efc84E512bB9C30f76E30c160eD06FB); // Chainlink token address in Polygon Mumbai testnet
 
     contractOwner = msg.sender;
