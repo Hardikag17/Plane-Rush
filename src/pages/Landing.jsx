@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import Web3 from 'web3';
 
 import { GameContext } from '../utils/web3';
-import SmartContract from '../abis/NFTCharacter.json';
+import SmartContract from '../abis/PlaneRush.json';
 import '../styles/landing.css';
 
 const Landing = () => {
