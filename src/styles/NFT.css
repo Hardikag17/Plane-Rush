@@ -3,7 +3,7 @@ img:hover {
 }
 
 button {
-  width: 80%;
+  width: 80% !important;
   font-size: 20px !important;
 }
 
