@@ -23,9 +23,7 @@ const GameScreen = () => {
         localStorage.setItem('highScore', '' + score);
       if (score - currHighScore > 100) {
         alert(
-          `New high score of ${score}!!\n
-          A mystery character is being created for you.\n
-          Check in after a few minutes`
+          `New high score of ${score}!!\nA mystery character is being created for you.\nCheck in after a few minutes`
         );
         try {
           state.contract.methods
