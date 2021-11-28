@@ -46,17 +46,17 @@ class GameScene extends Scene {
     if (this.loaded) {
       if (this.cursors.down.isDown || this.keys.S.isDown) {
         const direction = this.player.flipX ? -1 : 1;
-        this.player.setVelocityY(400 * this.playerSpeed);
+        this.player.setVelocityY(100 * this.playerSpeed);
         this.player.setRotation((direction * Math.PI) / 4);
       } else if (this.cursors.up.isDown || this.keys.W.isDown) {
         const direction = this.player.flipX ? -1 : 1;
-        this.player.setVelocityY(-400 * this.playerSpeed);
+        this.player.setVelocityY(-100 * this.playerSpeed);
         this.player.setRotation((direction * -Math.PI) / 4);
       } else if (this.cursors.left.isDown || this.keys.A.isDown) {
-        this.player.setVelocityX(-100 * this.playerSpeed);
+        this.player.setVelocityX(-50 * this.playerSpeed);
         this.player.flipX = true;
       } else if (this.cursors.right.isDown || this.keys.D.isDown) {
-        this.player.setVelocityX(100 * this.playerSpeed);
+        this.player.setVelocityX(50 * this.playerSpeed);
         this.player.flipX = false;
       } else {
         this.player.setVelocityY(0);
@@ -83,7 +83,7 @@ class GameScene extends Scene {
       'player'
     );
     player.setGravityY(10);
-    player.setScale(0.2);
+    player.setScale(0.4);
     player.setBounce(0.5);
     player.setCollideWorldBounds(true);
     return player;
@@ -123,7 +123,7 @@ class GameScene extends Scene {
   }
   resetPosOne() {
     const rnd = 0.1 + (Math.random() % 0.7);
-    const mx = 2 + rnd * 0.3;
+    const mx = 2.3 + rnd * 0.2;
     this.blockOne.setX(this.physics.world.bounds.width);
     this.blockOne.setY(this.physics.world.bounds.height);
     this.blockOne.setScale(0.5, mx * rnd);
