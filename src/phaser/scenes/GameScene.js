@@ -45,21 +45,24 @@ class GameScene extends Scene {
   update() {
     if (this.loaded) {
       if (this.cursors.down.isDown || this.keys.S.isDown) {
+        const direction = this.player.flipX ? -1 : 1;
         this.player.setVelocityY(400 * this.playerSpeed);
-        this.player.setRotation(Math.PI / 4);
+        this.player.setRotation((direction * Math.PI) / 4);
       } else if (this.cursors.up.isDown || this.keys.W.isDown) {
+        const direction = this.player.flipX ? -1 : 1;
         this.player.setVelocityY(-400 * this.playerSpeed);
-        this.player.setRotation(-Math.PI / 4);
+        this.player.setRotation((direction * -Math.PI) / 4);
       } else if (this.cursors.left.isDown || this.keys.A.isDown) {
         this.player.setVelocityX(-100 * this.playerSpeed);
-        this.player.setRotation(Math.PI);
+        this.player.flipX = true;
       } else if (this.cursors.right.isDown || this.keys.D.isDown) {
         this.player.setVelocityX(100 * this.playerSpeed);
-        this.player.setRotation(0);
+        this.player.flipX = false;
       } else {
         this.player.setVelocityY(0);
         this.player.setVelocityX(0);
         this.player.setRotation(0);
+        this.player.flipX = false;
       }
       if (this.blockOne.x <= 0 || this.blockTwo.x <= 0) {
         this.score += 10;
