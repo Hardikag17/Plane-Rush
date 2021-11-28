@@ -35,10 +35,10 @@ function Start() {
   }, [state, setState]);
 
   useEffect(() => {
-    if (state.loaded) {
+    if (state.loaded && state.userNfts.length === 0) {
       loadNFT();
     }
-  }, [state.loaded, loadNFT]);
+  }, [state, loadNFT]);
 
   const items =
     state.userNfts.length > 0 ? (

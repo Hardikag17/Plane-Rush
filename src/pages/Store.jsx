@@ -40,10 +40,10 @@ const Store = () => {
   }, [state, loadNftById]);
 
   useEffect(() => {
-    if (state.loaded) {
+    if (state.loaded && state.nfts.length === 0) {
       loadNfts();
     }
-  }, [state.loaded, loadNfts]);
+  }, [state, loadNfts]);
 
   const items =
     state.nfts.length > 0 ? (

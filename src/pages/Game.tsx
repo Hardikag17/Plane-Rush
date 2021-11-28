@@ -28,13 +28,15 @@ const GameScreen = () => {
           Check in after a few minutes`
         );
         try {
-          state.contract.methods.requestNewRandomTurtle(score.toString()).send({
-            from: state.account,
-            gasPrice: state.web3.utils.toWei('50', 'Gwei'),
-            gas: 500000,
-          });
+          state.contract.methods
+            .requestNewRandomCharacter(score.toString())
+            .send({
+              from: state.account,
+              gasPrice: state.web3.utils.toWei('50', 'Gwei'),
+              gas: 500000,
+            });
         } catch (e) {
-          console.error('random turtle error');
+          console.error('character generation error');
           console.error(e);
         }
       }

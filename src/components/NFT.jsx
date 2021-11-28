@@ -30,7 +30,6 @@ const NFT = ({ nft: { url, price, page, tokenId } }) => {
       fetch(parsedUrl)
         .then((data) => data.json())
         .then((res) => {
-          console.log(res);
           let parsedImage = res.image.replace(
             'ipfs://',
             'https://cloudflare-ipfs.com/ipfs'
