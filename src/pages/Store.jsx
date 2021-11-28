@@ -1,33 +1,30 @@
 import React from 'react';
 import { GameContext } from '../utils/web3';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useCallback } from 'react';
 import NFT from '../components/NFT';
 import Load from '../components/Load';
 
 const Store = () => {
   const { state, setState } = useContext(GameContext);
 
-  useEffect(() => {
-    if (state.loaded) {
-      loadNfts();
-    }
-  }, [state.loaded]);
+  const loadNftById = useCallback(
+    async (i) => {
+      const nft = parseInt(await state.contract.methods.tokenByIndex(i).call());
+      const price = state.web3.utils.fromWei(
+        await state.contract.methods.charactersForSale(nft).call(),
+        'ether'
+      );
+      console.log('nft:' + nft);
+      const url = await state.contract.methods.tokenURI(nft).call();
+      setState((state) => ({
+        ...state,
+        nfts: [...state.nfts, { url, price, page: 'store', tokenId: nft }],
+      }));
+    },
+    [state, setState]
+  );
 
-  const loadNftById = async (i) => {
-    const nft = parseInt(await state.contract.methods.tokenByIndex(i).call());
-    const price = state.web3.utils.fromWei(
-      await state.contract.methods.charactersForSale(nft).call(),
-      'ether'
-    );
-    console.log('nft:' + nft);
-    const url = await state.contract.methods.tokenURI(nft).call();
-    setState((state) => ({
-      ...state,
-      nfts: [...state.nfts, { url, price, page: 'store', tokenId: nft }],
-    }));
-  };
-
-  const loadNfts = () => {
+  const loadNfts = useCallback(() => {
     state.contract.methods
       .totalSupply()
       .call()
@@ -40,7 +37,13 @@ const Store = () => {
       .catch((e) => {
         console.log('nft fetch error');
       });
-  };
+  }, [state, loadNftById]);
+
+  useEffect(() => {
+    if (state.loaded) {
+      loadNfts();
+    }
+  }, [state.loaded, loadNfts]);
 
   const items =
     state.nfts.length > 0 ? (

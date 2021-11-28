@@ -13,7 +13,7 @@ function Navbar() {
           <i
             className='fas fa-store-alt '
             onClick={() => {
-              history.push('/Store');
+              history.push('/store');
             }}></i>
           <i
             className='fas fa-play'

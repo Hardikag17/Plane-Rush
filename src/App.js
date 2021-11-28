@@ -6,7 +6,6 @@ const Landing = lazy(() => import('./pages/Landing'));
 const Main = lazy(() => import('./pages/Main'));
 const Store = lazy(() => import('./pages/Store'));
 const Game = lazy(() => import('./pages/Game'));
-const NftDetails = lazy(() => import('./pages/NftDetails'));
 
 const App = () => {
   return (
@@ -15,10 +14,9 @@ const App = () => {
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
             <Route exact path='/' component={Landing} />
-            <Route path='/play' component={Main} />
-            <Route path='/Store' component={Store} />
+            <Route path='/home' component={Main} />
+            <Route path='/store' component={Store} />
             <Route path='/game' component={Game} />
-            <Route path='/details/:id' component={NftDetails} />
           </Switch>
         </Suspense>
       </Layout>

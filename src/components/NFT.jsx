@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState, memo } from 'react';
 import { GameContext } from '../utils/web3';
 import Load from './Load';
 import '../styles/NFT.css';
@@ -23,18 +23,17 @@ const NFT = ({ nft: { url, price, page, tokenId } }) => {
 
   useEffect(() => {
     if (url !== 'dummy') {
-      let parsedUrl = url.replace('ipfs://', 'https://');
-      parsedUrl = parsedUrl.replace(
-        '/metadata.json',
-        '.ipfs.cf-ipfs.com/metadata.json'
+      let parsedUrl = url.replace(
+        'ipfs://',
+        'https://cloudflare-ipfs.com/ipfs/'
       );
       fetch(parsedUrl)
         .then((data) => data.json())
         .then((res) => {
-          let parsedImage = res.image.replace('ipfs://', 'https://');
-          parsedImage = parsedImage.replace(
-            '/character.png',
-            '.ipfs.cf-ipfs.com/character.png'
+          console.log(res);
+          let parsedImage = res.image.replace(
+            'ipfs://',
+            'https://cloudflare-ipfs.com/ipfs'
           );
           setName(res.name);
           setImage(parsedImage);
@@ -44,7 +43,7 @@ const NFT = ({ nft: { url, price, page, tokenId } }) => {
           console.log(e);
         });
     }
-  }, []);
+  }, [url]);
 
   const publishNft = async () => {
     price = prompt('Enter the Amount in MATIC');
@@ -186,4 +185,4 @@ const NFT = ({ nft: { url, price, page, tokenId } }) => {
   );
 };
 
-export default NFT;
+export default memo(NFT);

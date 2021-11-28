@@ -31,7 +31,7 @@ const Landing = () => {
             highScore: '0',
             loaded: true,
           });
-          history.push('/play');
+          history.push('/home');
         }
       } catch (e) {
         alert(e);

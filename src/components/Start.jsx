@@ -1,6 +1,6 @@
 import '../styles/Start.css';
 import { GameContext } from '../utils/web3';
-import { useContext, useEffect } from 'react';
+import { useCallback, useContext, useEffect } from 'react';
 import NFT from '../components/NFT';
 import Load from '../components/Load';
 import Footer from '../components/Footer';
@@ -8,13 +8,7 @@ import Footer from '../components/Footer';
 function Start() {
   const { state, setState } = useContext(GameContext);
 
-  useEffect(() => {
-    if (state.loaded) {
-      loadNFT();
-    }
-  }, [state.loaded]);
-
-  const loadNFT = async () => {
+  const loadNFT = useCallback(async () => {
     const userNfts = [];
     try {
       const supply = await state.contract.methods
@@ -38,7 +32,13 @@ function Start() {
     }
     userNfts.push({ url: 'dummy', price: 0, page: 'main', tokenId: -1 });
     setState({ ...state, userNfts });
-  };
+  }, [state, setState]);
+
+  useEffect(() => {
+    if (state.loaded) {
+      loadNFT();
+    }
+  }, [state.loaded, loadNFT]);
 
   const items =
     state.userNfts.length > 0 ? (
