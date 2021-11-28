@@ -55,7 +55,7 @@ const GameScreen = () => {
       }
       if (ended) {
         console.log('rerouting');
-        router.push('/home');
+        router.push('/play');
       }
     }
   }, [game, state, ended, endGame, router]);
