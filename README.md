@@ -5,6 +5,7 @@
 > Plane Rush is a game based on NFTs that runs on the `POLYGON` network in the `ETHEREUM` blockchain and is powered by decentralized `Chainlink` Oracles.
 
 <h6>Built at the Chainlink Hackathon 2021</h6>
+<br />
 
 ## 🤔 What is Plane Rush?
 
@@ -14,9 +15,13 @@
 
 ✔️ All the NFTs are stored using `nft.storage` which stores the NFTs on `Filecoin` and `IPFS`
 
+<br />
+
 ## 💻 Bounties that we have worked on
 
 ![PlaneRush](screenshots/chainlink_hackathon_tracks.png)
+
+<br />
 
 ## ⬇️ About the game
 
@@ -31,6 +36,7 @@
 ✔️ Users will be rewarded with new Randomized characters which have a speed corresponding to the score achieved in the game with a certain amount of randomization to it whenever the user achieves a new checkpoint. The NFTs are generated in the backend and the images of these NFTs are completely Random.
 
 ✔️ `Chainlink` is used to bring in the NFT's metadata on-chain through its API calls. Thus, the NFTs can be dynamic and randomized just by calling a smart contract function from the frontend of the DApp
+<br />
 
 ### 🤔 How are the Random NFT images generated?
 
@@ -55,16 +61,19 @@ There are several different images for each of the 5 components and they are com
 
 ✔️ The DApp(Decentralized Application) which includes the Game is deployed to the `Polygon Mumbai Testnet`
 ✔️ The website also has its own NFT Marketplace for the users to buy and sell NFTs that are used to play the game.
+<br />
 
 ## ⬇️ Working Demo of our DApp
 
 The Application's frontend is deployed to https://planerush.netlify.app/ using `Netlify`. Make sure you have Metamask installed in your browser and connect it to MATIC Mumbai Testnet using the Custom RPC option. Also, get some MATIC from the Faucet.
+<br />
 
 ## 💻 PlaneRush contract
 
 <a href="https://mumbai.polygonscan.com/address/0xCcA0ccA9a8F12c90a1aCB3c6612c91D06fA4CF75#contracts">Click here</a> to view the PlaneRush contract on Polygonscan Mumbai Testnet
 
 The contract <a href="https://mumbai.polygonscan.com/address/0xCcA0ccA9a8F12c90a1aCB3c6612c91D06fA4CF75#code">code</a> has been verified and it is visible on `mumbai.polygonscan.com`
+<br />
 
 ## ☑️ Built With
 
@@ -86,6 +95,7 @@ The contract <a href="https://mumbai.polygonscan.com/address/0xCcA0ccA9a8F12c90a
 - [Metamask](https://metamask.io/) - Wallet Provider
 - [Polygonscan](https://mumbai.polygonscan.com/) - View and keep track of transactions happening around a smart contract as well as view its code, read and write stuff to it
 - [TailwindCSS](https://tailwindcss.com/) - A packed CSS framework to build beautiful websites faster
+<br />
 
 ## ☑️ Getting Started
 
