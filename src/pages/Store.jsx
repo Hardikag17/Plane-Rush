@@ -16,7 +16,7 @@ const Store = () => {
   const loadNftById = async (i) => {
     const nft = parseInt(await state.contract.methods.tokenByIndex(i).call());
     const price = state.web3.utils.fromWei(
-      await state.contract.methods.turtlesForSale(nft).call(),
+      await state.contract.methods.charactersForSale(nft).call(),
       'ether'
     );
     console.log('nft:' + nft);

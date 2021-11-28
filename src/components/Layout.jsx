@@ -23,8 +23,8 @@ const Layout = ({ children }) => {
     }
 
     if (state.loaded) {
-      state.contract.events.NewTurtleGenerated((err, event) => {
-        if (event) alert('random turtle generated');
+      state.contract.events.NewCharacterGenerated((err, event) => {
+        if (event) alert('random character generated');
       });
     }
   }, [state.loaded]);
