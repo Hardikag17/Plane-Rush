@@ -1,4 +1,4 @@
-import { Scene } from 'phaser';
+import { Scene, Loader } from 'phaser';
 
 class GameScene extends Scene {
   constructor() {
@@ -91,7 +91,7 @@ class GameScene extends Scene {
   }
   startGame(url) {
     this.load.image('player', url);
-    this.load.once(Phaser.Loader.Events.COMPLETE, () => {
+    this.load.once(Loader.Events.COMPLETE, () => {
       this.player = this.createPlayer();
       this.addCollider(this.blockOne);
       this.addCollider(this.blockTwo);
