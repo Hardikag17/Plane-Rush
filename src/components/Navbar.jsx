@@ -9,14 +9,14 @@ function Navbar() {
   return (
     <div>
       <nav className='navbar'>
-        <div className=' store  container-fluid' style={{ fontSize: '50px' }}>
-          <i
-            className='fas fa-store-alt '
+        <div className='container-fluid justify-end' style={{ fontSize: '50px' }}>
+          <button
+            className='fas btn btn-dark ' style={{width:'200px',fontFamily:'DM Sans'}}
             onClick={() => {
               history.push('/store');
-            }}></i>
-          <i
-            className='fas fa-play'
+            }}>Marketplace</button>
+          <button
+            className='fas  btn btn-dark ' style={{width:'200px',fontFamily:'DM Sans'}}
             onClick={() => {
               state.contract.methods
                 .userAddressToHighScore(state.account)
@@ -28,7 +28,7 @@ function Navbar() {
                     localStorage.setItem('highScore', highScore);
                   history.push('/game');
                 });
-            }}></i>
+            }}>Start</button>
         </div>
       </nav>
     </div>

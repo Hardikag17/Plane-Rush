@@ -52,14 +52,14 @@ function Start() {
   return (
     <div className='container-fluid bg'>
       <center>
-        <div className='start' style={{ marginBottom: '5%' }}>
+        <div className='start' style={{ marginBottom: '0%' }}>
           <b>
             <h1 className='text-3xl'>NFT's Connected to your wallet</h1>
           </b>
         </div>
         <div
           className='d-flex justify-content-center'
-          style={{ flexWrap: 'wrap', marginBottom: '10%' }}>
+          style={{ flexWrap: 'wrap', marginBottom: '2%' }}>
           {items}
         </div>
       </center>
