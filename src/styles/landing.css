@@ -1,0 +1,27 @@
+.landing-page-div {
+  text-align: center;
+  max-width: 100%;
+  z-index: -1;
+  height: 100vh;
+  position: fixed;
+  overflow-y: hidden;
+  background-image: url('../assets/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.poster-text {
+  font-size: 17vh;
+  margin-right: 6%;
+  font-family: 'Pacifico', 'cursive';
+  color: #e61616;
+}
+
+.front {
+  z-index: 1;
+}
+
+.connect-button{
+  margin-top: 40%;
+}

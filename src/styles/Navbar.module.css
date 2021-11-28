@@ -1,0 +1,12 @@
+button {
+  background-color: #242d3c !important;
+}
+
+button:hover {
+  background-color: #3f4c63 !important;
+}
+
+.navbar,
+.navbar-bg {
+  background-color: #2c5ac754 !important;
+}

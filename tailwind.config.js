@@ -11,7 +11,7 @@ module.exports = {
       fontFamily: ['Pacifico', 'cursive'],
     },
     backgroundImage: {
-      design: 'url(../src/assets/landingpage.png)',
+      design: "url('./src/assets/bg.png')",
     },
     colors: {
       Primary: '#f4471f',
