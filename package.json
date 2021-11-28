@@ -12,6 +12,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@truffle/hdwallet-provider": "^1.4.1",
+    "@types/react-router-dom": "^5.3.2",
     "autoprefixer": "^9",
     "chai": "^4.3.4",
     "craco": "^0.0.3",
@@ -30,6 +31,7 @@
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "truffle": "^5.4.0",
     "truffle-plugin-verify": "^0.5.11",
+    "typescript": "^4.5.2",
     "web-vitals": "^1.0.1",
     "web3": "^1.4.0"
   },
