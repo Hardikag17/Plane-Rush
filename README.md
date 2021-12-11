@@ -4,7 +4,6 @@
 
 > Plane Rush is a game based on NFTs that runs on the `POLYGON` network in the `ETHEREUM` blockchain and is powered by decentralized `Chainlink` Oracles.
 
-<h6>Built at the Chainlink Hackathon 2021</h6>
 <br />
 
 ## 🤔 What is Plane Rush?
@@ -19,7 +18,7 @@
 
 ## 💻 Bounties that we have worked on
 
-![PlaneRush](screenshots/chainlink_hackathon_tracks.png)
+![PlaneRush](screenshots/polygon_hackathon_tracks.png)
 
 <br />
 
